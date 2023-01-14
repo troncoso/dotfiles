@@ -1,0 +1,7 @@
+theme = "tokyonight"
+
+
+[[language]]
+name = "rust"
+auto-format = true
+

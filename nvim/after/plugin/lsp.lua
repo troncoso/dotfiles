@@ -19,6 +19,37 @@ lsp.configure('sumneko_lua', {
 	}
 })
 
+lsp.configure('rust_analyzer', {
+	tools = {
+		runnables = {
+			use_telescope = true,
+		},
+		inlay_hints = {
+			auto = true,
+			show_parameter_hints = false,
+			parameter_hints_prefix = "",
+			other_hints_prefix = "",
+		},
+	},
+	settings = {
+		['rust-analyzer'] = {
+			checkOnSave = {
+				command = 'clippy'
+			},
+			procMacro = {
+				enable = true
+			}
+		}
+	},
+	on_attach = function(_, bufnr)
+		vim.keymap.set("n", "<Leader>l", "<cmd>:!cargo run<CR>", {
+			noremap = true,
+			silent = true,
+			buffer = bufnr
+		})
+	end
+})
+
 lsp.set_preferences({
 	sign_icons = { error = " ", warn = " ", hint = "ﴞ ", info = " " }
 })

@@ -16,6 +16,10 @@ require('lazy').setup({
 	{ 'rose-pine/neovim', as = 'rose-pine' },
 	{ 'folke/tokyonight.nvim', as = 'tokyonight' },
 	{ 'navarasu/onedark.nvim', as = 'onedark' },
+	{ 'navarasu/onedark.nvim', as = 'onedark' },
+	{ 'EdenEast/nightfox.nvim', as = 'nightfox' },
+	{ 'nyoom-engineering/oxocarbon.nvim', as = 'carbonfox' },
+
 	-- Needed by telescope
 	'nvim-lua/plenary.nvim',
 	-- Grep search for telescope
@@ -42,6 +46,8 @@ require('lazy').setup({
 	'numToStr/Comment.nvim',
 	 -- Copilot
 	'github/copilot.vim',
+	-- Modify netrw
+	'tpope/vim-vinegar',
 
 	-- START LSP-ZERO --
 

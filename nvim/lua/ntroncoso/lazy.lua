@@ -77,6 +77,8 @@ require("lazy").setup({
 	"VonHeikemen/lsp-zero.nvim",
 
 	-- END LSP-ZERO --
+
+	"glepnir/lspsaga.nvim",
 })
 
 -- Setup for plugins that don't need special configuration

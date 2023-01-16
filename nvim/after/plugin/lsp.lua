@@ -76,25 +76,17 @@ lsp.setup_nvim_cmp({
 	},
 })
 
+local lspsaga = require("lspsaga")
+
 -- Customize some of the default keybindings
 lsp.on_attach(function(_, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
-	vim.keymap.set("n", "gs", function()
-		vim.lsp.buf.signature_help()
-	end, opts)
-	vim.keymap.set("n", "<leader>nd", function()
-		vim.diagnostic.goto_next()
-	end, opts)
-	vim.keymap.set("n", "<leader>pd", function()
-		vim.diagnostic.goto_prev()
-	end, opts)
-	vim.keymap.set("n", "<leader>ca", function()
-		vim.lsp.buf.code_action()
-	end, opts)
-	vim.keymap.set("n", "<leader>rn", function()
-		vim.lsp.buf.rename()
-	end, opts)
+	vim.keymap.set("n", "gs", "<cmd>Lspsaga peek_definition<CR>", opts)
+	vim.keymap.set("n", "<leader>nd", "<cmd>vim.diagnostic.goto_next<CR>", opts)
+	vim.keymap.set("n", "<leader>pd", "<cmd>vim.diagnostic.goto_prev<CR>", opts)
+	vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+	vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 end)
 
 -- START configure formatting
@@ -131,3 +123,4 @@ null_ls.setup({
 
 lsp.nvim_workspace()
 lsp.setup()
+lspsaga.setup({})

@@ -1,1 +1,1 @@
-require('ntroncoso')
+require("ntroncoso")

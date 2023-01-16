@@ -41,12 +41,15 @@ lsp.configure("rust_analyzer", {
 			},
 		},
 	},
+	-- Create a keymap to execute cargo run and cargo check
 	on_attach = function(_, bufnr)
-		vim.keymap.set("n", "<Leader>l", "<cmd>:!cargo run<CR>", {
+		local opts = {
 			noremap = true,
 			silent = true,
 			buffer = bufnr,
-		})
+		}
+		vim.keymap.set("n", "<Leader>r", "<cmd>:!cargo run<CR>", opts)
+		vim.keymap.set("n", "<Leader>c", "<cmd>:!cargo check<CR>", opts)
 	end,
 })
 
@@ -65,6 +68,7 @@ cmp_mappings["<S-Tab>"] = nil
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
+	-- Ensure that LSP suggestions appear before buffer suggestions and snippets
 	sources = {
 		{ name = "path" },
 		{ name = "nvim_lsp", keyword_length = 1 },
@@ -72,9 +76,13 @@ lsp.setup_nvim_cmp({
 	},
 })
 
-lsp.on_attach(function(client, bufnr)
+-- Customize some of the default keybindings
+lsp.on_attach(function(_, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
+	vim.keymap.set("n", "gs", function()
+		vim.lsp.buf.signature_help()
+	end, opts)
 	vim.keymap.set("n", "<leader>nd", function()
 		vim.diagnostic.goto_next()
 	end, opts)
@@ -89,6 +97,7 @@ lsp.on_attach(function(client, bufnr)
 	end, opts)
 end)
 
+-- START configure formatting
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -118,6 +127,7 @@ null_ls.setup({
 		end
 	end,
 })
+-- END configure formatting
 
 lsp.nvim_workspace()
 lsp.setup()

@@ -78,10 +78,12 @@ require("lazy").setup({
 
 	-- END LSP-ZERO --
 
+	-- For some nicer LSP interactions
 	"glepnir/lspsaga.nvim",
 })
 
 -- Setup for plugins that don't need special configuration
+
 require("Comment").setup()
 require("gitsigns").setup()
 require("nvim-autopairs").setup()

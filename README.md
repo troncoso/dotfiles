@@ -15,3 +15,9 @@ My dotfiles
 * nvm
 * node
 * typescript
+
+# Terminal Aliases
+
+alias vim='nvim --listen /tmp/nvim-server.pipe'
+alias t='tmux'
+alias ta='tmux a -t'

@@ -1,7 +1,3 @@
--- Netrw
-vim.g.netrw_liststyle = 3
-
--- Editor
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

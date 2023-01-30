@@ -46,10 +46,15 @@ require("lazy").setup({
 	"numToStr/Comment.nvim",
 	-- Copilot
 	"github/copilot.vim",
-	-- Modify netrw
-	"tpope/vim-vinegar",
 	-- For formatting
 	"jose-elias-alvarez/null-ls.nvim",
+
+	{
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+	},
 
 	-- START LSP-ZERO --
 

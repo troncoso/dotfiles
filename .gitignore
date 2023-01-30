@@ -7,3 +7,5 @@ github-copilot
 iterm2
 nvim.bck
 lazygit/state.yml
+gh/config.yml
+gh/hosts.yml

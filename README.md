@@ -20,6 +20,8 @@ My dotfiles
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+In tmux, press <C-a>I to install plugins
+
 # Terminal Aliases
 
 ```

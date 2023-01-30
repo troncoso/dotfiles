@@ -61,13 +61,15 @@ iremap("<C-d>", "<BS>")
 iremap("<C-b>", "<ESC>I")
 -- Got to end in insert mode
 iremap("<C-e>", "<ESC>A")
+-- Undo in insert mode
+iremap("<C-u>", "<C-o>u")
+-- Redo in insert mode
+iremap("<C-r>", "<C-o><C-r>")
 
 --
 -- Visual mode remaps
 --
 
--- Exit visual mode and save file
-vremap("<C-s>", "<ESC>:w<CR>")
 -- Move highlighted lines down
 vremap("J", ":m '>+1<CR>gv=gv")
 -- Move hightlighted lines up
@@ -77,6 +79,8 @@ vremap("K", ":m '<-2<CR>gv=gv")
 -- Visual and select mode remaps
 --
 
+-- Exit visual mode and save file
+vremap("<C-s>", "<ESC>:w<CR>")
 -- Paste without replacing paste buffer
 xremap("<leader>p", '"_dP')
 -- Keep selecting after indenting

@@ -16,6 +16,10 @@ My dotfiles
 * node
 * typescript
 
+# Configure tmux plugins
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Terminal Aliases
 
 ```

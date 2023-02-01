@@ -15,6 +15,7 @@ My dotfiles
 * nvm
 * node
 * typescript
+* ripgrep
 
 # Configure tmux plugins
 

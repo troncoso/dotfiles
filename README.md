@@ -3,6 +3,8 @@ My dotfiles
 
 # Install
 
+## brew
+
 * iterm2
 * tmux
 * neovim
@@ -12,10 +14,13 @@ My dotfiles
 * rust
 	* rust_analyzer
 	* clippy
-* nvm
-* node
-* typescript
 * ripgrep
+
+## Other
+
+* NVM
+* Node
+* Typescript
 
 # Configure tmux plugins
 
